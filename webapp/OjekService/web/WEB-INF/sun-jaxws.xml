@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime" version="2.0">
+    <endpoint name="user" implementation="User.UserImpl" url-pattern="/soap/userimpl"/>
+    <endpoint name="driver" implementation="Driver.DriverImpl" url-pattern="/soap/driverimpl"/>
+    <endpoint name="database" implementation="Database.DatabaseImpl" url-pattern="/soap/databaseimpl"/>
+</endpoints>

@@ -1,0 +1,187 @@
+.front_page {
+    border-radius: 50px;
+    width: 400px;
+    height: 500px;
+    margin: 25px auto;
+    text-align: left;
+    background: #8bbd3c;
+    border: 10px solid #02702c;
+    color: #02702c;
+}
+
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/BebasNeue.otf) 
+}
+
+.content-font-roboto {
+    font-family: "Roboto", sans-serif;
+}
+
+.content-font-sanchez {
+    font-family: "Sanchez", serif;
+}
+
+.header {
+    display: flex;
+    width: auto;
+    height: 88px;
+    text-align: center;
+}
+
+h2 {
+    float: left;
+    width: 33.33%;
+    margin: 15px 0px 48px 0px;
+}
+
+.header-title {
+    float: left;
+    width: 33.34%;
+    font-family: bebas;
+    font-size: 50px;
+    margin: 15px 0px 15px 0px;
+}
+
+.content label{
+    float: left;
+    width: 41%;
+}
+
+.login-uname {
+    margin-top: 40px;
+    margin-left: 10px;
+    font-size: 23px;
+}
+
+.login-input-uname {
+    height: 25px;
+    margin-top: 40px;
+    width: 200px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.login-pass {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 23px;
+}
+
+.login-input-pass {
+    height: 25px;
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+.signup-txt-top {
+    font-size: 18px;
+    margin: 5px 10px 0px 0px;
+}
+
+.signup-txt {
+    margin: 5px 10px 0px 0px;
+    font-size: 18px;
+}
+
+.signup-input {
+    font-size: 15px;
+    width: 200px;
+    height: 25px;
+}
+
+.signup-input-2 {
+    font-size: 15px;
+    width: 175px;
+    height: 25px;
+}
+
+.content {
+    margin: 3px;
+    border: 10px solid transparent;
+    font-family: "Roboto", sans-serif;
+    font-weight: medium;
+    font-size: 14px;
+}
+
+.content input[type="text"], .content input[type="password"]{
+    border: 1px solid #02702c;
+    margin-bottom: 5px;
+    float: left;
+}
+
+.content input[type="checkbox"] {
+    margin-top: 10px;
+}
+
+.content input[type="submit"] {
+    background: #82d800;
+    font-size: 24px;
+    float: right;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.content a {
+    float: left;
+}
+
+#login-go {
+    margin-top: 40px;
+}
+
+#login-link {
+    margin: 50px 0px 0px 10px;    
+    font-size: 14px;
+}
+
+#signup-submit {
+    font-size: 18px;
+    margin-top: 15px;
+    padding: 8px 1px;
+    color: #000;
+}
+
+#signup-link {
+    margin-top: 25px;
+    font-size: 12px;
+}
+
+.form-group {
+    display: flex;
+}
+
+.checkbox {
+    margin-top: 8px;
+}
+
+.desc-checkbox {
+    margin: 8px 0px 0px 6px;
+}
+
+.error {
+    margin: -2px 0px 8px 165px;
+    color: darkred;
+    font-size: 12px;
+    display: none;
+}
+
+.check {
+    margin-left:8px;
+    font-size: 18px;
+}
+
+/*.horizontal-line-top {*/
+    /*height:5px;*/
+    /*width: 70px;*/
+    /*border-bottom: 5px solid #000000;*/
+/*}*/
+
+/*.horizontal-line-bottom {*/
+    /*height:5px;*/
+    /*width: 70px;*/
+    /*border-top: 5px solid #000000;*/
+/*}*/

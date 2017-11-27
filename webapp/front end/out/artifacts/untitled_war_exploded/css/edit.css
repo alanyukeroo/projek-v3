@@ -1,0 +1,277 @@
+@font-face {
+    font-family: bebas;
+    src: url(../fonts/BebasNeue.otf)
+}
+
+.all-element {
+    /* border-radius: 25px; */
+    width: 450px;
+    /* height: 600px; */
+    margin: 0px auto;
+    background: #ffffff;
+    /* border: 2px solid #000000; */
+}
+
+.column-flex {
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    /* align-items:baseline; */
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px 0px 5px 0px;
+    /* padding: 0px; */
+}
+
+.head-title {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 10px 10px 5px 10px;
+    position: relative;
+}
+
+.content-font-roboto {
+    font-family: "Roboto", sans-serif;
+}
+
+.content-font-sanchez {
+    font-family: "Sanchez", serif;
+}
+
+.judul {
+    font-family: bebas;
+    font-size: 36px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.subjudul {
+    font-family: bebas;
+    font-size: 24px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+ /* The switch - the box around the slider */
+ .switch {
+    margin: 2px 0px 2px 0px;
+    position: relative;
+    display: inline-block;
+    float: right;
+    width: 36px;
+    height: 22px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {display:none;}
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #117d11;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #117d11;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 26px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid black;
+    display: inline-block;
+    cursor: pointer;
+    background: #ccc;
+    /* float: right; */
+    font-size: 9px;
+    /* margin: 2px 0px 0px 0px; */
+    /* position: absolute; */
+    /* right: 0; */
+    padding: 3px 5px 3px 5px;
+}
+
+.square-picture {
+    min-width: 112px;
+    max-width: 112px;
+    min-height:112px;
+    max-height:112px;
+}
+
+.gambar-kotak {
+    min-width: 112px;
+    max-width: 112px;
+    min-height:112px;
+    max-height:112px;
+    margin: 0px 10px 0px 0px;
+    border: 1px solid black;
+}
+
+.file-gambar {
+    background: white;
+    border: 1px solid grey;
+    width: 100%;
+}
+
+.fit-width {
+    width: 100%;
+    margin: 0px;
+}
+
+.use-baseline {
+    align-items: baseline;
+}
+
+.field-value{
+    width: 60%;
+}
+
+.field-label{
+    width: 40%;
+}
+
+.posisi-kanan {
+    position: absolute;
+    right: 0;
+}
+
+.posisi-kiri {
+    position: absolute;
+    left: 0;
+}
+
+.green-button {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #82d800;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+}
+
+.red-button {
+    border: 1px solid black;
+    border-radius: 5px;
+    background: #d50027;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+}
+
+.red-button:hover {
+    cursor: pointer;
+}
+
+.green-button:hover {
+    cursor: pointer;
+}
+
+.top-margin {
+    margin-top: 30px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+table {
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid grey;
+    font-weight: normal;
+}
+
+th.nomor {
+    width: 5%;
+    text-align: center;
+}
+
+th.lokasi {
+    width: auto;
+    text-align: center;
+}
+
+th.aksi {
+    width: 25%;
+    text-align: center;
+}
+
+input.list-lokasi {
+    width: 100%;
+    color: black;
+    border: 0px none transparent;
+    background: transparent;
+    font-size: 20px;
+}
+
+.field-location {
+    margin: 4px 0px 0px 0px;
+    width:80%;
+}
+
+.gambar-icon {
+    margin: auto;
+    width: 20px;
+    height:20px;
+    /* flex-basis: 50%; */
+    /* flex-grow: 1; */
+}
+
+.gambar-icon-edit {
+    color: orange;
+    /*transform: rotate(180deg);*/
+    /*-webkit-transform: rotate(180deg);*/
+    /*-moz-transform: rotate(180deg);*/
+    /*-o-transform: rotate(180deg);*/
+    /*padding-bottom : 20px;*/
+}
+
+.gambar-icon-delete {
+    color: red;
+}
+
+.gambar-icon:hover {
+    cursor: pointer;
+}
