@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var db = require('../../config/db')
 
-mongoose.connect('mongodb://localhost/myappdatabase');
+mongoose.connect(db.url);
 
 var driverSchema = new mongoose.Schema ({
 	driver_username: {

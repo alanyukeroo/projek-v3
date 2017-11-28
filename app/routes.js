@@ -3,9 +3,9 @@ module.exports = function(app) {
 	// load modules and models
 	var express = require('express');
 	var app = express();
-	var chat = require('../models/chat');
-	var driver = require('../models/driver');
-	var firebaseToken = require('../models/firebasetoken');
+	var chat = require('./models/chat');
+	var driver = require('./models/driver');
+	var firebaseToken = require('./models/firebasetoken');
 
 	// REST FOR FIREBASE TOKEN
 	app.post('/configure_token', function(req,res) {

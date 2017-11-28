@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
+var db = require('../../config/db')
 
-mongoose.connect('mongodb://localhost/myappdatabase');
+mongoose.connect(db.url);
 
 var ChatSchema = new mongoose.Schema({  
   user_passenger: {
