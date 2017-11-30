@@ -8,6 +8,48 @@ Time: 18.25
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDZ1pnMoLxB_OpClgKiDebKdcwP1d8Zw2A",
+        authDomain: "projek-3dad4.firebaseapp.com",
+        databaseURL: "https://projek-3dad4.firebaseio.com",
+        projectId: "projek-3dad4",
+        storageBucket: "projek-3dad4.appspot.com",
+        messagingSenderId: "183887873921"
+    };
+    firebase.initializeApp(config);
+
+    // Retrieve Firebase Messaging object.
+    const messaging = firebase.messaging();
+
+    messaging.requestPermission()
+        .then(function() {
+            console.log('Notification permission granted.');
+            // Get Instance ID token. Initially this makes a network call, once retrieved
+            // subsequent calls to getToken will return from cache.
+            messaging.getToken()
+                .then(function(currentToken) {
+                    if (currentToken) {
+                        console.log(currentToken);
+                    } else {
+                        // Show permission request.
+                        console.log('No Instance ID token available. Request permission to generate one.');
+                        // Show permission UI
+                    }
+                })
+                .catch(function(err) {
+                    console.log('An error occurred while retrieving token. ', err);
+                });
+        })
+        .catch(function(err) {
+            console.log('Unable to get permission to notify.', err);
+        });
+
+
+</script>
+
 <html ng-app="projek">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
@@ -50,7 +92,6 @@ To change this template use File | Settings | File Templates.
 
     <div class="head-title">
         <div class="kiri">
-            {{ 1+1 }}
             <p class="main-title">MAKE AN ORDER</p>
         </div>
     </div>
@@ -116,8 +157,13 @@ To change this template use File | Settings | File Templates.
     <%-- FORM PART 3 --%>
     <div id="step-3">
         <div class="column-flex with-border">
-            <ol class="chat">
-                <li class="other">
+            <ol class="chat" ng-repeat="chat in chats">
+                <li class="{{chat.from}}">
+                    <div class="msg">
+                        <p>{{ chat.message }}</p>
+                    </div>
+                </li>
+                <!-- <li class="other">
                     <div class="msg">
                         <p>Halo!</p>
                         <p>Ada dimana sekarang ya pak?</p>
@@ -129,11 +175,12 @@ To change this template use File | Settings | File Templates.
                         <p>Saya ada di depan gerbang ITB</p>
                         <p>buruan ya pak!</p>
                     </div>
-                </li>
+                </li> -->
             </ol>
         </div>
         <div class="column-flex with-border">
             <input type="text" placeholder="Type here!"/>
+            <input class="green-button content-font-sanchez" type="button" value="KIRIM">
         </div>
         <div class="head-title main-content content-font-sanchez" >
             <button class="red-button posisi-tengah" onclick="increase();check(step);">

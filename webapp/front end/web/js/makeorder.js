@@ -166,4 +166,3 @@ function order(){
         alert("Please give rating to our driver");
     }
 }
-
