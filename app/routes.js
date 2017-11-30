@@ -130,17 +130,92 @@ module.exports = function(app) {
 // 	 REST FOR CHAT FEATURES
 
 	app.post('/sendmessageptod', function(req,res) {
-		var msg = req.body.message;
+		var message = req.body.message;
 		var sender_token = req.body.token;
-		var rcv_uname = req.body.username;
-		firebaseToken.find({token: sender_token}, function(error, rcv_token) {
+		var rcv_uname = req.body.rcv_username;
+		firebaseToken.findOne({username: rcv_uname}, function(error, rcv_token) {
 			if (error) {
 				var response = {status : 503, message : 'Database error detected, problem on send message 1'};
 				res.json(response);
 			} else {
-				firebaseToken.find({token: rcv_token}, function(error1, ))
+				firebaseToken.findOne({token: sender_token}, function(error1, sender_uname) {
+					if (error1) {
+						var response = {status : 503, message : 'Database error detected, problem on send message 2'};
+						res.json(response);
+					} else {
+						chat.findOne({user_passenger: sender_uname.username, user_driver: rcv_uname}, function(error2, chat_details) {
+							if (error2) {
+								var response = {status : 503, message : 'Database error detected, problem on send message 3'};
+								res.json(response);
+							} else {
+								if (!chat_details) {
+									var addConversation = chat({
+										user_passenger: sender_uname.username,
+										user_driver: rcv_uname,
+										message_body: [{from: sender_uname.username, to: rcv_uname, msg: message}]
+									});
+									addConversation.save();
+									var response = {"status" : 200, "message" : "Conversation created and message sent to driver successfully"};
+									res.json(response);
+								} else {
+									chat_details.message_body.push({from: sender_uname, to: rcv_uname, msg: message});
+									chat_details.save();
+									var response = {"status" : 200, "message" : "Message sent to driver successfully"};
+									res.json(response);
+								}
+							}
+						})
+					}
+				});
 			}
 		});
+	});
+
+	app.post('/sendmessagedtop', function(req,res) {
+		var message = req.body.message;
+		var sender_token = req.body.token;
+		var rcv_uname = req.body.rcv_username;
+		firebaseToken.findOne({username: rcv_uname}, function(error, rcv_token) {
+			if (error) {
+				var response = {status : 503, message : 'Database error detected, problem on send message 1'};
+				res.json(response);
+			} else {
+				firebaseToken.findOne({token: sender_token}, function(error1, sender_uname) {
+					if (error1) {
+						var response = {status : 503, message : 'Database error detected, problem on send message 2'};
+						res.json(response);
+					} else {
+						chat.findOne({user_passenger: rcv_uname, user_driver: sender_uname.username}, function(error2, chat_details) {
+							if (error2) {
+								var response = {status : 503, message : 'Database error detected, problem on send message 3'};
+								res.json(response);
+							} else {
+								if (!chat_details) {
+									var addConversation = chat({
+										user_passenger: rcv_uname,
+										user_driver: sender_uname.username,
+										message_body: [{from: sender_uname.username, to: rcv_uname, msg: message}]
+									});
+									addConversation.save();
+									var response = {"status" : 200, "message" : "Conversation created and message sent to passenger successfully"};
+									res.json(response);
+								} else {
+									chat_details.message_body.push({from: sender_uname, to: rcv_uname, msg: message});
+									chat_details.save();
+									var response = {"status" : 200, "message" : "Message sent to passenger successfully"};
+									res.json(response);
+								}
+							}
+						})
+					}
+				});
+			}
+		});
+	});
+
+	// route to handle all angular requests
+	app.get('*', function(req, res) {
+		res.send('./public/index.html');
 	});
 };
 
