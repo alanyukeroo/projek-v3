@@ -1,9 +1,8 @@
 <component name="libraryTable">
   <library name="org.json">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../library/servlet-2.2.8.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../library/mysql-connector-java-5.1.23-bin.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../library/com.mysql.jdbc_5.1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../library/mysql-connector-java-5.1.23-bin.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../../library/org.json.jar!/" />
     </CLASSES>
     <JAVADOC />

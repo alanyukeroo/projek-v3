@@ -14,6 +14,8 @@ To change this template use File | Settings | File Templates.
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
     <meta charset="UTF-8">
     <title>PR-OJEK : Make Order</title>
 </head>
@@ -48,6 +50,7 @@ To change this template use File | Settings | File Templates.
 
     <div class="head-title">
         <div class="kiri">
+            {{ 1+1 }}
             <p class="main-title">MAKE AN ORDER</p>
         </div>
     </div>
