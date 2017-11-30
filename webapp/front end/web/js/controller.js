@@ -68,9 +68,14 @@ app.controller('order-controller', function($scope,$http) {
             "message": msg
         }
 
+        var account = {
+
+        }
+
         $scope.chats.push(msg1);
         $scope.message = "";
 
+        $http.post('localhost:3000/configure_token', )
         $http.post('localhost:3000/sendmessageptod', JSON, {})
             .then(function(result) {
                 console.log(result)

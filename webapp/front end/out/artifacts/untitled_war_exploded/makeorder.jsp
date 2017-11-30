@@ -179,8 +179,8 @@ To change this template use File | Settings | File Templates.
             </ol>
         </div>
         <div class="column-flex with-border">
-            <input type="text" placeholder="Type here!"/>
-            <input class="green-button content-font-sanchez" type="button" value="KIRIM">
+            <input type="text" placeholder="Type here!" ng-model="message"/>
+            <input class="green-button content-font-sanchez" ng-click="sendMessage()" type="button" value="KIRIM">
         </div>
         <div class="head-title main-content content-font-sanchez" >
             <button class="red-button posisi-tengah" onclick="increase();check(step);">
