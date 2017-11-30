@@ -8,15 +8,16 @@ Time: 18.25
 To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html ng-app="projek">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/angular.min.js"></script>
     <meta charset="UTF-8">
     <title>PR-OJEK : Make Order</title>
 </head>
-<body>
+<body ng-controller="order-controller">
 <div class="all-element">
     <div class="head-title">
         <div class="kiri">

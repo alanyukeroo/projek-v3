@@ -2,23 +2,6 @@ document.getElementById('error-password').style.display = "none";
 
 var IP_ADDR = "http://localhost:7272";
 
-// Create the XHR object.
-function createCORSRequest(method, url) {
-    var xhr = new XMLHttpRequest();
-    if ("withCredentials" in xhr) {
-        // XHR for Chrome/Firefox/Opera/Safari.
-        xhr.open(method, url, true);
-    } else if (typeof XDomainRequest != "undefined") {
-        // XDomainRequest for IE.
-        xhr = new XDomainRequest();
-        xhr.open(method, url);
-    } else {
-        // CORS not supported.
-        xhr = null;
-    }
-    return xhr;
-}
-
 // Make the actual CORS request.
 function login() {
     var username = document.getElementById('username').value;
@@ -37,7 +20,7 @@ function login() {
         var response = JSON.parse(this.responseText);
         if (response.status == "success") {
             var token = response.token;
-            location.href = "profile.jsp?id_active="+token;
+            location.href = "profile.jsp?token="+token;
         }
         else {
             document.getElementById('error-password').style.display = "block";

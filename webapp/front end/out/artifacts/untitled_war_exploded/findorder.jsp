@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Sanchez" rel="stylesheet">
@@ -63,10 +64,8 @@
 
     <%-- STEP 2 --%>
     <div id="part-2">
-        <div class="head-title main-content content-font-sanchez">
-            <div class="column-flex">
-                <p class="posisi-tengah">Finding Order ... </p>
-            </div>
+        <div class="main-content content-font-sanchez">
+            <p class="posisi-tengah">Finding Order ... </p>
         </div>
         <div class="column-flex">
             <div class="red-button posisi-tengah content-font-sanchez" onclick="increase()">
