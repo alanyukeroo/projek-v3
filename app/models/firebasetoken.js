@@ -4,8 +4,8 @@ var db = require('../../config/db')
 mongoose.connect(db.url);
 
 var tokenSchema = new mongoose.Schema ({
-    username: string,
-    token: string,
+    username: String,
+    token: String,
 });
 
 var firebaseToken = mongoose.model('firebaseToken', tokenSchema);

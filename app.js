@@ -28,7 +28,7 @@ var port = process.env.PORT || 3000;
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json 
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 
 // parse application/vnd.api+json as json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
@@ -40,7 +40,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override')); 
 
 // routes =================================
-require.('./app/routes')(app);
+require('./app/routes')(app);
 
 // starting server
 app.listen(port);
